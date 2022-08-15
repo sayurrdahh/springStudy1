@@ -23,7 +23,9 @@ public class PrototypeTest {
         System.out.println("prototypeBean2 = " + prototypeBean2);
         assertThat(prototypeBean1).isNotSameAs(prototypeBean2);
 
-        ac.close();
+        prototypeBean1.destroy(); //직접 닫아줌
+        prototypeBean2.destroy();
+
     }
 
     @Scope("prototype")
